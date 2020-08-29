@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import HelloBlock from "./HelloBlock";
+import LandingPage from "./LandingPage";
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <HelloBlock />
+                <LandingPage/>
             </div>
         );
     }

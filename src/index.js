@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style/Style.css'
+import './style/navbar.css'
 
 ReactDOM.render(
   <React.StrictMode>
