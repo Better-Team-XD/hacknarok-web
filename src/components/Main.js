@@ -10,7 +10,8 @@ class Main extends React.Component {
                 </div>
                 <div class={"main"}>
                     <div className="md-form">
-                        <input type="text" id="suffixInside" className="form-control"/>
+                        <input type="text" placeholder="Co masz w lodówce?" id="suffixInside" className="form-control"/>
+                        <button type="button" className="btn btn-secondary">Dodaj</button>
                     </div>
                     <IngredientsList />
                 </div>

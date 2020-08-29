@@ -62,6 +62,21 @@ body {
 
 .form-control {
     width: 80vh;
+    height: 50px;
+}
+
+.md-form {
+    width: 80vh;
+    display: flex;
+    flex-direction: row;
+    wrap: nowrap;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.md-form > button {
+    width: 100px;
+
 }
 
 @media (max-width: 768px) {
@@ -69,7 +84,7 @@ body {
         font-size: 2.5em;
     }
 
-    .list-group, .form-control {
+    .list-group, .md-form {
         width: 50vh;
     }
 }
