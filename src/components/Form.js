@@ -14,9 +14,8 @@ class Form extends React.Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
-
-
 
     componentDidMount() {
         fetch("http://35.228.89.132/api/v1/ingredients")
@@ -58,6 +57,23 @@ class Form extends React.Component {
         this.forceUpdate()
     }
 
+    handleSubmit(){
+        let ingredients = this.state.elements.filter(element => element !== "").map(element => element.props.name)
+        let data = {
+            ingredients: ingredients,
+            category: "Śniadanie"
+        }
+        fetch("http://35.228.89.132/api/v1/matches", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+
     render() {
         return (
             <div>
@@ -74,7 +90,7 @@ class Form extends React.Component {
                     {this.state.elements}
                 </div>
                 <div className={"search-btn"}>
-                    <button type="button" className="btn btn-primary">Szukaj</button>
+                    <button type="button" className="btn btn-primary" onClick={this.handleSubmit}>Szukaj</button>
                 </div>
             </div>
         )
