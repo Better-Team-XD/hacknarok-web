@@ -1,0 +1,75 @@
+.form-control {
+    width: 80vh;
+    height: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.md-form {
+    width: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: white;
+    border-radius: 10px;
+    opacity: 90%;
+}
+
+.list-group {
+    margin: 5px 0 0 0;
+    max-width: 80vh;
+    height: 20vh;
+}
+
+.list-group-item {
+    opacity: 90%;
+}
+
+.md-form > button {
+    width: 100px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    opacity: 90%;
+}
+
+.ingredients-added {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    width: 80vh;
+    height: 50px;
+}
+
+.ingredient-card {
+    background-color: gray;
+    opacity: 90%;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    height: 50px;
+    min-width: 100px;
+    border-radius: 5px;
+    margin: 10px 10px 0 0;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.close {
+    margin-left: 10px;
+}
+
+
+@media (max-width: 768px) {
+
+    .md-form, .ingredients-added  {
+        width: 50vh;
+    }
+
+    .ingredients-added {
+        justify-content: space-evenly;
+    }
+}

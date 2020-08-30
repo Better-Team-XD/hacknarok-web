@@ -1,5 +1,5 @@
 import React from "react";
-import IngredientsList from "./IngredientsList"
+import IngredientsList from "./IngredientsAutoComplete"
 import Form from "./Form";
 
 class Main extends React.Component {

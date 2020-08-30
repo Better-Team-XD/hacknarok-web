@@ -54,37 +54,16 @@ body {
     color: white;
 }
 
-.list-group {
-    margin: 20px 0px 20px 0px;
-    width: 80vh;
-    height: 20vh;
-}
 
-.form-control {
-    width: 80vh;
-    height: 50px;
-}
 
-.md-form {
-    width: 80vh;
-    display: flex;
-    flex-direction: row;
-    wrap: nowrap;
-    background-color: white;
-    border-radius: 10px;
-}
 
-.md-form > button {
-    width: 100px;
-
-}
 
 @media (max-width: 768px) {
     .title > h1 {
         font-size: 2.5em;
     }
 
-    .list-group, .md-form {
+    .list-group  {
         width: 50vh;
     }
 }

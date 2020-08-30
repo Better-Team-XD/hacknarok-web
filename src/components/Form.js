@@ -1,5 +1,6 @@
 import React from "react";
-import IngredientsList from "./IngredientsList";
+import IngredientsAutoComplete from "./IngredientsAutoComplete";
+import IngredientsAdded from "./IngredientsAdded";
 
 class Form extends React.Component {
     constructor() {
@@ -25,7 +26,8 @@ class Form extends React.Component {
                     <input type="text" placeholder="Co masz w lodówce?" id="suffixInside" className="form-control"/>
                     <button type="button" className="btn btn-secondary">Dodaj</button>
                 </div>
-                <IngredientsList />
+                <IngredientsAutoComplete />
+                <IngredientsAdded />
             </div>
         )
     }
