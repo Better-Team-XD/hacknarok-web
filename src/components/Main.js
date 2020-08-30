@@ -12,7 +12,9 @@ class Main extends React.Component {
 
                     <Form />
                 </div>
-
+                <div className={"search-btn"}>
+                    <button type="button" className="btn btn-primary">Szukaj</button>
+                </div>
             </div>
         )
     }
