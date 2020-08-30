@@ -1,7 +1,5 @@
 import React from "react";
-import logo  from '../images/logo3.png';
 import { ReactComponent as User } from '../images/user.svg';
-import { ReactComponent as NewUser } from '../images/new-user.svg';
 
 class Navbar extends React.Component {
     render() {

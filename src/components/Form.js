@@ -58,7 +58,14 @@ class Form extends React.Component {
     }
 
     handleSubmit(){
+
         this.props.onAction(this.state.elements)
+        this.setState( previousState => ({
+            ingredients: previousState.ingredients,
+            search: "",
+            htmlList: "",
+            elements: []
+        }))
     }
 
     render() {

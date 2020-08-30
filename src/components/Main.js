@@ -41,7 +41,7 @@ class Main extends React.Component {
                     <Form onAction={this.action}/>
 
                     <div className={"container"}>
-                        <div className={"recipes-container"}>
+                        <div className={"recipes-container"} style={{marginTop: "15%"}}>
                             {this.state.htmlList}
                         </div>
                     </div>
