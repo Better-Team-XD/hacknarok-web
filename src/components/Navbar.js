@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                         </div>
                         <ul className="nav navbar-nav navbar-right">
                             {/*<li><a href="#"><NewUser /></a></li>*/}
-                            <li><a href="https://github.com/Better-Team-XD"><img className={"github-logo"} src={logo}/></a></li>
+                            <li><a href="https://github.com/Better-Team-XD" target="_blank" rel="noopener noreferrer"><img className={"github-logo"} src={logo}/></a></li>
                         </ul>
 
                 </nav>
