@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "./Form";
 import Recipe from "./Recipe";
-import Footer from "./Footer";
 
 class Main extends React.Component {
     constructor() {

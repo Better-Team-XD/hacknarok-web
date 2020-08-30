@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as User } from '../images/user.svg';
+import logo from '../images/github.png';
 
 class Navbar extends React.Component {
     render() {
@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                         </div>
                         <ul className="nav navbar-nav navbar-right">
                             {/*<li><a href="#"><NewUser /></a></li>*/}
-                            <li><a href="#"><User /></a></li>
+                            <li><a href="https://github.com/Better-Team-XD"><img className={"github-logo"} src={logo}/></a></li>
                         </ul>
 
                 </nav>
