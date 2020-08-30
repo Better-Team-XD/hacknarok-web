@@ -23,6 +23,7 @@
 
 .list-group-item {
     opacity: 90%;
+    cursor: pointer;
 }
 
 .md-form > button {

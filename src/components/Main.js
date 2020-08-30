@@ -1,15 +1,14 @@
 import React from "react";
-import IngredientsList from "./IngredientsAutoComplete"
 import Form from "./Form";
 
 class Main extends React.Component {
     render() {
         return (
             <div>
-                <div class={"title text-center"}>
+                <div className={"title text-center"}>
                     <h1>Na co masz ochotę?</h1>
                 </div>
-                <div class={"main"}>
+                <div className={"main"}>
 
                     <Form />
                 </div>
