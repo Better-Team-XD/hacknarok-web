@@ -10,11 +10,10 @@ class Main extends React.Component {
                     <h1>Na co masz ochotę?</h1>
                 </div>
                 <div className={"main"}>
-
                     <Form />
-                    <Recipes />
-                </div>
 
+                </div>
+                <Recipes />
             </div>
         )
     }

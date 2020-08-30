@@ -92,6 +92,7 @@ class Form extends React.Component {
                 <div className={"ingredients-added"}>
                     {this.state.elements}
                 </div>
+
             </div>
         )
     }
