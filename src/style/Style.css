@@ -67,6 +67,11 @@ body {
     width: 200px;
 }
 
+.page-footer {
+    position: fixed;
+    bottom: 0px;
+}
+
 
 
 @media (max-width: 768px) {

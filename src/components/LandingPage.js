@@ -8,7 +8,6 @@ class LandingPage extends React.Component {
         return (
             <div className={"container landing-page"}>
                 <Navbar />
-
                 <Main />
                 <Footer />
             </div>
