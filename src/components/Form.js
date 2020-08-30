@@ -73,6 +73,9 @@ class Form extends React.Component {
                 <div className={"ingredients-added"}>
                     {this.state.elements}
                 </div>
+                <div className={"search-btn"}>
+                    <button type="button" className="btn btn-primary">Szukaj</button>
+                </div>
             </div>
         )
     }
