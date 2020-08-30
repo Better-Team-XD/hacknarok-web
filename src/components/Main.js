@@ -1,5 +1,6 @@
 import React from "react";
 import IngredientsList from "./IngredientsList"
+import Form from "./Form";
 
 class Main extends React.Component {
     render() {
@@ -9,11 +10,8 @@ class Main extends React.Component {
                     <h1>Na co masz ochotę?</h1>
                 </div>
                 <div class={"main"}>
-                    <div className="md-form">
-                        <input type="text" placeholder="Co masz w lodówce?" id="suffixInside" className="form-control"/>
-                        <button type="button" className="btn btn-secondary">Dodaj</button>
-                    </div>
-                    <IngredientsList />
+
+                    <Form />
                 </div>
 
             </div>
