@@ -1,7 +1,6 @@
 import React from "react";
 import IngredientsAdded from "./IngredientsAdded";
 import AutoCompleteListElement from "./AutoCompleteListElement";
-import Recipes from "./Recipes";
 
 class Form extends React.Component {
     constructor() {
@@ -59,25 +58,13 @@ class Form extends React.Component {
     }
 
     handleSubmit(){
-        let ingredients = this.state.elements.filter(element => element !== "").map(element => element.props.name)
-        let data = {
-            ingredients: ingredients,
-            category: "Śniadanie"
-        }
-        fetch("http://35.228.89.132/api/v1/matches", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
+        this.props.onAction(this.state.elements)
     }
 
     render() {
         return (
             <div>
+
                 <div className="md-form">
                     <input type="text" placeholder="Co masz w lodówce?" id="suffixInside" className="form-control"
                         name="search" onChange={this.handleChange} autoComplete="off"/>
@@ -92,6 +79,7 @@ class Form extends React.Component {
                 <div className={"ingredients-added"}>
                     {this.state.elements}
                 </div>
+
             </div>
         )
     }
