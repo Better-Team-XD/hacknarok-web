@@ -46,6 +46,11 @@ class Form extends React.Component {
         this.setState({["htmlList"]: htmlList.slice(0, 3)})
     }
 
+    capitialize(string){
+        string = string.toLowerCase();
+        return string.charAt(0).toUpperCase() + string.slice(1)
+    }
+
     handleDelete(index){
         this.state.elements[index] = ""
         this.forceUpdate()
@@ -54,6 +59,8 @@ class Form extends React.Component {
     handleAdd(name) {
         let key = this.state.elements.length
         this.state.elements.push(<IngredientsAdded name={name} index={key} onDelete={this.handleDelete}/>)
+        this.state.htmlList=""
+        this.state.search=""
         this.forceUpdate()
     }
 
@@ -74,14 +81,14 @@ class Form extends React.Component {
 
                 <div className="md-form">
                     <input type="text" placeholder="Co masz w lodówce?" id="suffixInside" className="form-control"
-                        name="search" onChange={this.handleChange} autoComplete="off"/>
+                        name="search" onChange={this.handleChange} autoComplete="off" value={this.capitialize(this.state.search)}/>
                 </div>
 
                 <ul className="list-group">
                     {this.state.htmlList}
                 </ul>
                 <div className={"search-btn"}>
-                    <button type="button" className="btn btn-primary" onClick={this.handleSubmit}>Szukaj</button>
+                    <button type="button" className="btn btn-primary" onClick={this.handleSubmit} >Szukaj</button>
                 </div>
                 <div className={"ingredients-added"}>
                     {this.state.elements}
