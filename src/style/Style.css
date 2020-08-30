@@ -6,6 +6,10 @@ body {
     background-size: cover;
 }
 
+.landing-page {
+    height: 100vh;
+}
+
 .masthead {
     height: 20vh;
     min-height: 200px;
@@ -55,7 +59,12 @@ body {
 }
 
 .search-btn {
+    margin-top: 10px;
     text-align: center;
+}
+
+.search-btn > button {
+    width: 200px;
 }
 
 

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './style/Style.css'
 import './style/navbar.css'
 import './style/form.css'
+import './style/recipes.css'
 
 ReactDOM.render(
   <React.StrictMode>

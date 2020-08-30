@@ -69,13 +69,13 @@ class Form extends React.Component {
                 <ul className="list-group">
                     {this.state.htmlList}
                 </ul>
-
-                <div className={"ingredients-added"}>
-                    {this.state.elements}
-                </div>
                 <div className={"search-btn"}>
                     <button type="button" className="btn btn-primary">Szukaj</button>
                 </div>
+                <div className={"ingredients-added"}>
+                    {this.state.elements}
+                </div>
+
             </div>
         )
     }

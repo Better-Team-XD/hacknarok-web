@@ -1,0 +1,35 @@
+.recipes-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recipe {
+    margin: 10px;
+    width: 20%;
+    min-width: 300px;
+    max-width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+.recipe > a {
+    color: white;
+    display: inline-block;
+    height: 300px;
+    width: 100%;
+    background-color: gray;
+}
+
+.recipe-img {
+    height: 75%;
+}
+
+.recipe-name {
+    height: 15%;
+}
+
+.recipe-details {
+    height: 10%;
+}
