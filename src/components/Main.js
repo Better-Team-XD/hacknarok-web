@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./Form";
+import Recipes from "./Recipes";
 
 class Main extends React.Component {
     render() {
@@ -11,6 +12,7 @@ class Main extends React.Component {
                 <div className={"main"}>
 
                     <Form />
+                    <Recipes />
                 </div>
 
             </div>

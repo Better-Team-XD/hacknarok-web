@@ -1,6 +1,7 @@
 import React from "react";
 import IngredientsAdded from "./IngredientsAdded";
 import AutoCompleteListElement from "./AutoCompleteListElement";
+import Recipes from "./Recipes";
 
 class Form extends React.Component {
     constructor() {
@@ -91,7 +92,6 @@ class Form extends React.Component {
                 <div className={"ingredients-added"}>
                     {this.state.elements}
                 </div>
-
             </div>
         )
     }

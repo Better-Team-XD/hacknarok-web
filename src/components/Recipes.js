@@ -4,7 +4,7 @@ import image  from '../images/logo3.png';
 class Recipes extends Component {
     render() {
         return (
-            <div className="container">
+            <div className={"container"}>
 
 
 
