@@ -4,8 +4,8 @@ class IngredientsAdded extends Component {
     render() {
         return (
                 <div className={"ingredient-card"}>
-                    {this.props.name}
-                    <button type="button" className="close" onClick={() => this.props.onDelete(this.props.index)}>
+                    {this.props.ingredient.name}
+                    <button type="button" className="close" onClick={() => this.props.action(this.props.ingredient._id)}>
                         <span>×</span>
                     </button>
                 </div>

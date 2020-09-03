@@ -13,17 +13,17 @@
     flex-wrap: nowrap;
     background-color: white;
     border-radius: 10px;
-    opacity: 90%;
+    opacity: 0.9;
 }
 
 .list-group {
-    margin: 5px 0 0 0;
+    margin: 5px 0 6em 0;
     max-width: 80vh;
     height: 20vh;
 }
 
 .list-group-item {
-    opacity: 90%;
+    opacity: 0.9;
     cursor: pointer;
 }
 
@@ -31,7 +31,7 @@
     width: 100px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    opacity: 90%;
+    opacity: 0.9;
 }
 
 .ingredients-added {
@@ -46,7 +46,7 @@
 
 .ingredient-card {
     background-color: gray;
-    opacity: 90%;
+    opacity: 0.9;
     color: white;
     font-weight: bold;
     align-items: center;

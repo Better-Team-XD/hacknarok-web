@@ -6,19 +6,18 @@ class Main extends React.Component {
     constructor() {
         super();
         this.state = {
-            htmlList: []
+            recipes: []
         }
-        this.action = this.action.bind(this)
-
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
-    action(elements){
-        let ingredients = elements.filter(element => element !== "").map(element => element.props.name)
-        let data = {
-            ingredients: ingredients,
+    onSubmit(ingredients){
+        const data = {
+            ingredients: ingredients.map(ingredient => ingredient.name),
             category: "Śniadanie"
         }
-        fetch("http://35.228.89.132/api/v1/matches", {
+
+        fetch("http://localhost:5000/api/v1/matches", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,11 +26,14 @@ class Main extends React.Component {
         })
             .then(response => response.json())
             .then(data => this.setState({
-                htmlList: data.map(element => <Recipe name={element.name} url={element.url} imageUrl={element.imgUrl} missing={element.missing} />).slice(0,5)
+                recipes: data.content
             }))
     }
 
     render() {
+        const htmlList = this.state.recipes.map(
+            recipe => <Recipe recipe={recipe} key={recipe._id}/>
+        ).slice(0,9)
         return (
             <div>
                 <div className={"title text-center"}>
@@ -39,11 +41,10 @@ class Main extends React.Component {
                 </div>
                 <div className={"main"}>
 
-                    <Form onAction={this.action}/>
-
+                    <Form onAction={this.onSubmit}/>
                     <div className={"container"}>
                         <div className={"recipes-container"} style={{marginTop: "15%"}}>
-                            {this.state.htmlList}
+                            {htmlList}
                         </div>
                     </div>
 

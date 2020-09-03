@@ -1,101 +1,105 @@
 import React from "react";
-import IngredientsAdded from "./IngredientsAdded";
+import smartSearch from "smart-search"
+
+
+// import IngredientsAdded from "./IngredientsAdded";
 import AutoCompleteListElement from "./AutoCompleteListElement";
+import IngredientsAdded from "./IngredientsAdded";
 
 class Form extends React.Component {
     constructor() {
         super();
         this.state = {
-            ingredients: [],
-            search: "",
-            htmlList: "",
-            elements: []
+            ingredientsList: [],
+            searchText: "",
+            searchResults: [],
+            chosenIngredients: []
         }
         this.handleChange = this.handleChange.bind(this)
-        this.handleAdd = this.handleAdd.bind(this)
-        this.handleDelete = this.handleDelete.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.addIngredient = this.addIngredient.bind(this)
+        this.deleteIngredient = this.deleteIngredient.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     componentDidMount() {
-        fetch("http://35.228.89.132/api/v1/ingredients")
+        fetch("http://localhost:5000/api/v1/ingredients")
             .then(response => response.json())
             .then(data => this.setState({
-                ingredients: data,
-                search: "",
-                htmlList: "",
-                elements: []
+                ingredientsList: data.content,
+                searchText: "",
+                searchResults: [],
+                chosenIngredients: []
             }))
             .then(() => console.log(this.state))
     }
 
-    handleChange(event){
+    handleChange(event) {
         const {name, value} = event.target;
-        this.setState({[name]: value.toUpperCase()})
+        this.setState({[name]: value})
 
-        let showList = []
+        const searchList = this.state.ingredientsList.filter(
+            ingredient => !this.state.chosenIngredients.includes(ingredient)
+        )
+        let searchResults = value !== "" ?
+            smartSearch(searchList, [value], {name: true}).map(element => element.entry) : []
 
-        for (let i = 0; i < this.state.ingredients.length; i++){
-            let a = this.state.ingredients[i].name
-            if (a.toUpperCase().indexOf(this.state.search) > -1){
-                showList.push(a)
-            }
-        }
-
-        let htmlList = showList.map(element => <AutoCompleteListElement name={element} action={this.handleAdd}/>)
-        this.setState({["htmlList"]: htmlList.slice(0, 3)})
+        this.setState({"searchResults": searchResults})
     }
 
-    capitialize(string){
-        string = string.toLowerCase();
-        return string.charAt(0).toUpperCase() + string.slice(1)
+    addIngredient(ingredient) {
+        this.setState(previousState => ({
+            ingredientList: previousState.ingredientsList,
+            searchText: "",
+            searchResults: [],
+            chosenIngredients: previousState.chosenIngredients.concat(ingredient)
+        }))
     }
 
-    handleDelete(index){
-        this.state.elements[index] = ""
-        this.forceUpdate()
+    deleteIngredient(key) {
+        this.setState(previousState => ({
+            ingredientList: previousState.ingredientsList,
+            searchText: previousState.searchText,
+            searchResults: previousState.searchResults,
+            chosenIngredients: previousState.chosenIngredients.filter(ingredient => ingredient._id !== key)
+        }))
     }
 
-    handleAdd(name) {
-        let key = this.state.elements.length
-        this.state.elements.push(<IngredientsAdded name={name} index={key} onDelete={this.handleDelete}/>)
-        this.state.htmlList=""
-        this.state.search=""
-        this.forceUpdate()
-    }
-
-    handleSubmit(){
-
-        this.props.onAction(this.state.elements)
+    onSubmit() {
+        this.props.onAction(this.state.chosenIngredients)
         this.setState( previousState => ({
-            ingredients: previousState.ingredients,
-            search: "",
-            htmlList: "",
-            elements: []
+            ingredientList: [],
+            searchText: "",
+            searchResults: [],
+            chosenIngredients: []
         }))
     }
 
     render() {
+        const searchResultsHtml = this.state.searchResults.map(
+            result => <AutoCompleteListElement ingredient={result} key={result._id} action={this.addIngredient}/>
+        ).slice(0, 4)
+
+        const addedIngredients = this.state.chosenIngredients.map(
+            ingredient => <IngredientsAdded ingredient={ingredient} key={ingredient._id} action={this.deleteIngredient}/>
+        )
         return (
             <div>
-
                 <div className="md-form">
                     <input type="text" placeholder="Co masz w lodówce?" id="suffixInside" className="form-control"
-                        name="search" onChange={this.handleChange} autoComplete="off" value={this.capitialize(this.state.search)}/>
+                        name="searchText" autoComplete="off" value={this.state.searchText} onChange={this.handleChange}/>
                 </div>
-
                 <ul className="list-group">
-                    {this.state.htmlList}
+                    {searchResultsHtml}
                 </ul>
                 <div className={"search-btn"}>
-                    <button type="button" className="btn btn-primary" onClick={this.handleSubmit} >Szukaj</button>
+                    <button type="button" className="btn btn-primary" onClick={this.onSubmit}>Szukaj</button>
                 </div>
                 <div className={"ingredients-added"}>
-                    {this.state.elements}
+                    {addedIngredients}
                 </div>
-
             </div>
         )
     }
 }
+
 export default Form;
