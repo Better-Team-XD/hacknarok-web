@@ -22,7 +22,7 @@ class Form extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:5000/api/v1/ingredients")
+        fetch("https://35.237.93.60/api/v1/ingredients")
             .then(response => response.json())
             .then(data => this.setState({
                 ingredientsList: data.content,

@@ -17,7 +17,7 @@ class Main extends React.Component {
             category: "Śniadanie"
         }
 
-        fetch("http://localhost:5000/api/v1/matches", {
+        fetch("https://35.237.93.60/api/v1/matches", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
