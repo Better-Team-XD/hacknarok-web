@@ -8,8 +8,11 @@
 Frontend of XD Eats application. You can provide ingredients which you have in your fridge, then application will provide you set of recipes which you can prepare. 
 
 ## Screenshots
+![screen](https://github.com/Better-Team-XD/hacknarok-web/blob/master/screenshots/screen1.png)
+
 
 ## Showcase
+![showcase](https://github.com/Better-Team-XD/hacknarok-web/blob/master/screenshots/usecase.gif)
 
 
 ## Contributors :hotdog:
