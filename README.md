@@ -5,7 +5,11 @@
 [![smartsearch badge](https://img.shields.io/badge/smart--search-4.5.2-orange)](https://www.npmjs.com/package/smart-search)
 
 ## Project description
-Frontend of XD Eats application. You can provide ingredients which you have in your fridge, then application will provide you set of recipes which you can prepare. 
+Frontend of XD Eats application. You can provide ingredients which you have in your fridge, then application will provide you set of recipes which you can prepare. <br>
+[Link](https://github.com/Better-Team-XD/xd-eats-back-v2) to backend <br>
+[Link](https://github.com/Better-Team-XD/hacknarok-script) to webscraping script <br>
+[Link](https://github.com/Better-Team-XD/hacknarok-back) to original Java version <br>
+
 
 ## Screenshots
 ![screen](https://github.com/Better-Team-XD/hacknarok-web/blob/master/screenshots/screen1.png)
