@@ -8,7 +8,7 @@
 Frontend of XD Eats application. You can provide ingredients which you have in your fridge, then application will provide you set of recipes which you can prepare. <br>
 [Link](https://github.com/Better-Team-XD/xd-eats-back-v2) to backend <br>
 [Link](https://github.com/Better-Team-XD/hacknarok-script) to webscraping script <br>
-[Link](https://github.com/Better-Team-XD/hacknarok-back) to original Java version <br>
+[Link](https://github.com/Better-Team-XD/hacknarok-back) to original backend Java version <br>
 
 
 ## Screenshots
