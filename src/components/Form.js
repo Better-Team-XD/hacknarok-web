@@ -1,10 +1,8 @@
 import React from "react";
 import smartSearch from "smart-search"
-
-
-// import IngredientsAdded from "./IngredientsAdded";
 import AutoCompleteListElement from "./AutoCompleteListElement";
 import IngredientsAdded from "./IngredientsAdded";
+import {host} from "./Host"
 
 class Form extends React.Component {
     constructor() {
@@ -22,7 +20,7 @@ class Form extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://35.237.93.60/api/v1/ingredients")
+        fetch(`${host}api/v1/ingredients`)
             .then(response => response.json())
             .then(data => this.setState({
                 ingredientsList: data.content,

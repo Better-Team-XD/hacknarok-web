@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./Form";
 import Recipe from "./Recipe";
+import {host} from "./Host"
 
 class Main extends React.Component {
     constructor() {
@@ -17,7 +18,7 @@ class Main extends React.Component {
             category: "Śniadanie"
         }
 
-        fetch("https://35.237.93.60/api/v1/matches", {
+        fetch(`${host}api/v1/matches`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
