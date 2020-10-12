@@ -2,7 +2,7 @@
 
 [![react badge](https://img.shields.io/badge/react-16.13.1-blue)](https://www.npmjs.com/package/react)
 [![bootstrap badge](https://img.shields.io/badge/bootstrap-4.5.2-darkviolet)](https://www.npmjs.com/package/bootstrap)
-[![smartsearch badge](https://img.shields.io/badge/smart--search-4.5.2-orange)](https://www.npmjs.com/package/smart-search)
+[![smartsearch badge](https://img.shields.io/badge/smart--search-0.2.0-orange)](https://www.npmjs.com/package/smart-search)
 
 ## Project description
 Frontend of XD Eats application. You can provide ingredients which you have in your fridge, then application will provide you set of recipes which you can prepare. <br>
